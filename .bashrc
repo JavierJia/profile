@@ -26,6 +26,8 @@ alias gocs222='cd $HOME/workplace/code/github/DBMG-PRJ'
 alias goasterix='cd $HOME/workplace/code/asterix'
 alias golatex='cd $HOME/workplace/reference/latex'
 alias goblog='cd $HOME/workplace/code/github/javierjia.github.com/'
+alias goicslab='ssh jianfenj@openlab.ics.uci.edu'
+alias gooffice='ssh jianfeng@128.195.53.179'
 
 alias ctags='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .'
 
