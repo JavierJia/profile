@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/jiajianfeng/workplace/tmp'
-let g:netrw_dirhist_2='/opt/local/var/db/mysql5'
-let g:netrw_dirhist_3='/Users/jiajianfeng/.vim'
-let g:netrw_dirhist_4='/Users/jiajianfeng/workplace/code/github/javierjia.github.com/_posts'
-let g:netrw_dirhist_5='/Users/jiajianfeng/workplace/code/github/DBMG-PRJ/test'
-let g:netrw_dirhist_6='/Users/jiajianfeng/workplace/code/asterix/asterixdb-read-only'
-let g:netrw_dirhist_7='/Users/jiajianfeng/workplace/code/github/DBMG-PRJ/util'
-let g:netrw_dirhist_8='/Users/jiajianfeng/workplace/code/github/DBMG-PRJ/rm'
-let g:netrw_dirhist_9='/Users/jiajianfeng/workplace/reference/latex/JianfengJiaResume.tex'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/jianfeng/workspace/code/asterix-project/fullstack_genomix/genomix/genomix-core/src/main/resources/scripts'
+let g:netrw_dirhist_2='/home/jianfeng/workspace/code/asterix-project/fullstack_genomix/genomix/genomix-core/target/appassembler'
+let g:netrw_dirhist_3='/home/jianfeng/workspace/code/cs221/data_dirform_depth5/crawl'
