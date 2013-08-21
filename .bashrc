@@ -107,6 +107,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 export PS1="\u@\h \w:"
 
+export VIMRUNTIME=/usr/share/vim/vim74b
+
 # functions
 function mv2dir(){
 	[ -d $HOME/.removed ] || mkdir $HOME/.removed
@@ -127,7 +129,11 @@ alias .....='cd ../../../..'
 alias rm="mv2dir "
 
 alias du='du -d1 -h'
+#alias gcc='/usr/gcc_4_7/bin/gcc-4.7'
+#alias g++='/usr/gcc_4_7/bin/g++-4.7'
+alias cmake='/usr/local/bin/cmake'
 
+alias gocalvin='ssh jianfeng@calvin.calit2.uci.edu'
 alias gocode='cd $HOME/workspace/code'
 alias gocs222='cd $HOME/workspace/code/cs222'
 alias goasterix='cd $HOME/workspace/code/asterix-project'
@@ -147,18 +153,16 @@ alias ctags='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .'
 export LANG='en_US.utf-8'
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
-# Hadoop
+# JAVA
 export JAVA_HOME="$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")"
-export HADOOP_HOME="/home/jianfeng/software/hadoop/hadoop-0.23.5"
-export PATH="$PATH:${HADOOP_HOME}/bin"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # Lucene
-export LUCENE_VERSION="4.1"
-export LUCENE_HOME="$HOME/software/lucene-${LUCENE_VERSION}.0/build"
-export CLASSPATH="${LUCENE_HOME}/core/lucene-core-${LUCENE_VERSION}-SNAPSHOT.jar:\
-${LUCENE_HOME}/queryparser/lucene-queryparser-${LUCENE_VERSION}-SNAPSHOT.jar:\
-${LUCENE_HOME}/analysis/common/lucene-analyzers-common-${LUCENE_VERSION}-SNAPSHOT.jar:\
-${LUCENE_HOME}/demo/lucene-demo-${LUCENE_VERSION}-SNAPSHOT.jar"
+#export LUCENE_HOME="$HOME/software/lucene-${LUCENE_VERSION}.0/build"
+#export CLASSPATH="${LUCENE_HOME}/core/lucene-core-${LUCENE_VERSION}-SNAPSHOT.jar:\
+#${LUCENE_HOME}/queryparser/lucene-queryparser-${LUCENE_VERSION}-SNAPSHOT.jar:\
+#${LUCENE_HOME}/analysis/common/lucene-analyzers-common-${LUCENE_VERSION}-SNAPSHOT.jar:\
+#${LUCENE_HOME}/demo/lucene-demo-${LUCENE_VERSION}-SNAPSHOT.jar"
 # Pig
 export PIG_HOME="$HOME/software/hadoop/pig-0.10.0"
 export PATH="$PATH:$HOME/software/hadoop/pig-0.10.0/bin"
@@ -169,9 +173,28 @@ export PATH="$PATH:$HOME/software/hadoop/hbase-0.94.2/bin"
 
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source /home/jianfeng/.rvm/scripts/rvm
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#source /home/jianfeng/.rvm/scripts/rvm
 
 export YARN_HOME="$HADOOP_HOME"
 export NUTCH_RUNTIME_HOME="/home/jianfeng/software/apache-nutch-1.6"
 
+#export PATH=/usr/gcc_4_7/bin:$PATH
+#export LD_LIBRARY_PATH=/usr/gcc_4_7/lib:/usr/gcc_4_7/lib64:$LD_LIBRARY_PATH
+
+# NDK
+export NDK="$HOME/software/android-ndk-r8e"
+export PATH="$NDK:$PATH"
+#export ANDROID_NDK_TOOLCHAIN_ROOT="$HOME/software/android-toolchain"
+export ANDTOOLCHAIN="$HOME/software/android-cmake/toolchain/android.toolchain.cmake"
+alias android-cmake='cmake -DCMAKE_TOOLCHAIN_FILE=$ANDTOOLCHAIN '
+export ANDROID_HOME="/home/jianfeng/software/adt-bundle-linux-x86_64-20130522/sdk"
+export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
+
+
+# LUCENE
+export LUCENE_VERSION="4.3.1"
+export LUCENEHOME="/home/jianfeng/software/lucene-${LUCENE_VERSION}"
+export CLASSPATH=$CLASSPATH:${LUCENEHOME}/core/lucene-core-${LUCENE_VERSION}.jar:${LUCENEHOME}/queryparser/lucene-queryparser-${LUCENE_VERSION}.jar:${LUCENEHOME}/analysis/common/lucene-analyzers-common-${LUCENE_VERSION}.jar:${LUCENEHOME}/demo/lucene-demo-${LUCENE_VERSION}.jar:${LUCENEHOME}/spatial/lucene-spatial-${LUCENE_VERSION}.jar:${LUCENEHOME}/spatial/lib/spatial4j-0.3.jar:${LUCENEHOME}/queries/lucene-queries-${LUCENE_VERSION}.jar
+
+echo -ne "\033]0;${USER}@${HOSTNAME}\007"

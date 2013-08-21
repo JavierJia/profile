@@ -5,6 +5,9 @@ filetype plugin indent on
 syntax on
 set number
 
+" backspace
+set backspace=indent,eol,start
+
 " tab
 set expandtab
 set tabstop=4
@@ -61,6 +64,7 @@ Bundle 'scrooloose/syntastic'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+" Bundle 'VimIM'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle "Chiel92/vim-autoformat"
@@ -105,3 +109,10 @@ augroup resCur
     autocmd BufWinEnter * call ResCur()
 augroup END
 
+" Autoformat
+let g:formatprg_cs = "astyle"
+let g:formatprg_args_cs = "--mode=java"
+
+" Auto Complete 
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_confirm_extra_conf = 0
